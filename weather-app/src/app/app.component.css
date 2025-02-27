@@ -1,0 +1,32 @@
+/* Globales Styling */
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  background: #f4f4f4;
+}
+
+nav {
+  display: flex;
+  justify-content: center;
+  background: #d32f2f;
+  padding: 1rem;
+}
+
+nav a {
+  color: white;
+  text-decoration: none;
+  margin: 0 1rem;
+  font-size: 1.2rem;
+}
+
+nav a.active {
+  font-weight: bold;
+  border-bottom: 2px solid white;
+}
+
+main {
+  display: flex;
+  justify-content: center;
+  padding: 2rem;
+}
