@@ -1,11 +1,14 @@
 <div class="weather-container">
   <h2>Wetter-App</h2>
-  <input [(ngModel)]="city" placeholder="Stadt eingeben" />
-  <button (click)="fetchWeather()">Wetter abrufen</button>
 
-  <div *ngIf="weatherData() as weather">
-    <h3>Wetter in {{ weather.city }}</h3>
-    <p>Temperatur: {{ weather.temp }}°C</p>
-    <p>Beschreibung: {{ weather.description }}</p>
+  <div class="input-container">
+    <input type="text" [(ngModel)]="city" placeholder="Stadt eingeben..." />
+    <button (click)="fetchWeather()">Suchen</button>
+  </div>
+
+  <div class="weather-result" *ngIf="weatherData()">
+    <h3>🌍 {{ city }}</h3>
+    <p>🌡️ Temperatur: {{ weatherData()?.temp }}°C</p>
+    <p>💨 {{ weatherData()?.description }}</p>
   </div>
 </div>
