@@ -1,1 +1,10 @@
-<p>weather-detail works!</p>
+<div class="weather-detail-container">
+  <h2>Wetter in {{ city }}</h2>
+
+  <div *ngIf="weatherData()">
+    <p>🌡️ Temperatur: {{ weatherData()?.temp }}°C</p>
+    <p>💨 {{ weatherData()?.description }}</p>
+  </div>
+
+  <button routerLink="/weather">🔙 Zurück</button>
+</div>
