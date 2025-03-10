@@ -6,9 +6,13 @@
     <button (click)="fetchWeather()">Suchen</button>
   </div>
 
-  <div class="weather-result" *ngIf="weatherData()">
+<!--   <div class="weather-result" *ngIf="weatherData()">
     <h3>🌍 {{ city }}</h3>
     <p>🌡️ Temperatur: {{ weatherData()?.temp }}°C</p>
     <p>💨 {{ weatherData()?.description }}</p>
-  </div>
+-->
+    <!-- Link zur Detailseite -->
+     <!--
+    <a [routerLink]="['/weather', city]" class="details-link">Mehr Details</a>
+  </div> -->
 </div>
