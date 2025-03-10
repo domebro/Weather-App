@@ -5,5 +5,6 @@ import { WeatherComponent } from './weather/weather.component';
 
 export const routes: Routes = [
   { path: '', component: WeatherComponent },
-  { path: 'weather/:city', component: WeatherDetailComponent },
+  { path: 'weather', component: WeatherComponent },
+  { path: 'weather-detail/:city', component: WeatherDetailComponent }, // Dynamische Route für Details
 ];
