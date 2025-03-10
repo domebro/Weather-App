@@ -1,19 +1,25 @@
 import { Observable } from 'rxjs';
 
 import { HttpClient } from '@angular/common/http';
-import { inject, Injectable } from '@angular/core';
+import { Injectable } from '@angular/core';
 
 @Injectable({
   providedIn: 'root',
 })
 export class WeatherService {
-  private http = inject(HttpClient);
-  private apiUrl = 'https://api.open-meteo.com/v1/forecast';
+  private weatherUrl = 'https://api.open-meteo.com/v1/forecast';
 
-  constructor() {}
+  constructor(private http: HttpClient) {}
 
   getWeather(lat: number, lon: number): Observable<any> {
-    const url = `${this.apiUrl}?latitude=${lat}&longitude=${lon}&current_weather=true`;
-    return this.http.get(url);
+    return this.http.get<any>(
+      `${this.weatherUrl}?latitude=${lat}&longitude=${lon}&current_weather=true`
+    );
+  }
+
+  getCityCoordinates(city: string): Observable<any> {
+    return this.http.get<any>(
+      `https://geocoding-api.open-meteo.com/v1/search?name=${city}&count=1&format=json`
+    );
   }
 }
