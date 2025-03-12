@@ -11,9 +11,9 @@ export class WeatherService {
 
   constructor(private http: HttpClient) {}
 
-  getWeather(lat: number, lon: number): Observable<any> {
+  getWeather(lat: number, lon: number) {
     return this.http.get<any>(
-      `${this.weatherUrl}?latitude=${lat}&longitude=${lon}&current_weather=true`
+      `https://api.open-meteo.com/v1/forecast?latitude=${lat}&longitude=${lon}&current_weather=true&hourly=relative_humidity_2m,surface_pressure`
     );
   }
 

@@ -1,10 +1,16 @@
 <div class="weather-detail-container">
   <h2>Wetter in {{ city }}</h2>
 
-  <div *ngIf="weatherData()">
+  <!-- 🔹 Fehleranzeige -->
+  <p *ngIf="errorMessage()" class="error-message">{{ errorMessage() }}</p>
+
+  <div *ngIf="weatherData()" class="weather-info">
     <p>🌡️ Temperatur: {{ weatherData()?.temp }}°C</p>
-    <p>💨 {{ weatherData()?.description }}</p>
+    <p>💨 Windgeschwindigkeit: {{ weatherData()?.windspeed }} km/h</p>
+    <p>💧 Luftfeuchtigkeit: {{ weatherData()?.humidity }}%</p>
+    <p>🔽 Luftdruck: {{ weatherData()?.pressure }} hPa</p>
   </div>
 
-  <button routerLink="/weather">🔙 Zurück</button>
+  <!-- 🔹 Zurück zur Suche -->
+  <button (click)="goBack()" class="back-button">Zurück zur Suche</button>
 </div>

@@ -52,3 +52,9 @@ button:hover {
 .details-link:hover {
   background: #218838;
 }
+
+.error-message {
+  color: red;
+  font-size: 14px;
+  margin-top: 5px;
+}

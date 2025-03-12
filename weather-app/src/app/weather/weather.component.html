@@ -6,13 +6,18 @@
     <button (click)="fetchWeather()">Suchen</button>
   </div>
 
-<!--   <div class="weather-result" *ngIf="weatherData()">
-    <h3>🌍 {{ city }}</h3>
-    <p>🌡️ Temperatur: {{ weatherData()?.temp }}°C</p>
-    <p>💨 {{ weatherData()?.description }}</p>
--->
-    <!-- Link zur Detailseite -->
-     <!--
-    <a [routerLink]="['/weather', city]" class="details-link">Mehr Details</a>
-  </div> -->
+
+  <!-- 🔹 Fehleranzeige -->
+<p *ngIf="errorMessage()" class="error-message">{{ errorMessage() }}</p>
+
+  <!-- 🔹 Favoritenliste -->
+  <div class="favorites" *ngIf="favorites.length > 0">
+    <h3>⭐ Favoriten</h3>
+    <ul>
+      <li *ngFor="let fav of favorites" (click)="fetchWeather(fav)">
+        {{ fav }}
+      </li>
+    </ul>
+  </div>
+
 </div>
