@@ -11,6 +11,11 @@
     <p>🔽 Luftdruck: {{ weatherData()?.pressure }} hPa</p>
   </div>
 
+    <!-- 🔹 Button zum Hinzufügen der Stadt als Favorit -->
+  <button (click)="addToFavorites()" class="favorite-button">
+    Zu Favoriten hinzufügen
+  </button>
+
   <!-- 🔹 Zurück zur Suche -->
   <button (click)="goBack()" class="back-button">Zurück zur Suche</button>
 </div>

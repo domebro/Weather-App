@@ -58,3 +58,57 @@ button:hover {
   font-size: 14px;
   margin-top: 5px;
 }
+
+
+.favorites-container {
+  margin-top: 20px;
+  padding: 10px;
+  background: #f8f9fa;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.favorites-container h3 {
+  font-size: 18px;
+  margin-bottom: 10px;
+}
+
+.favorites-container ul {
+  list-style: none;
+  padding: 0;
+}
+
+.favorites-container li {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 8px;
+  background: white;
+  margin-bottom: 5px;
+  border-radius: 5px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+}
+
+.favorites-container a {
+  text-decoration: none;
+  color: #007bff;
+  font-weight: bold;
+  flex: 1;
+}
+
+.favorites-container a:hover {
+  text-decoration: underline;
+}
+
+.remove-fav {
+  background: none;
+  border: none;
+  color: red;
+  font-size: 16px;
+  cursor: pointer;
+  padding: 5px;
+}
+
+.remove-fav:hover {
+  color: darkred;
+}

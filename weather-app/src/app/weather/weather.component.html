@@ -11,13 +11,13 @@
 <p *ngIf="errorMessage()" class="error-message">{{ errorMessage() }}</p>
 
   <!-- 🔹 Favoritenliste -->
-  <div class="favorites" *ngIf="favorites.length > 0">
-    <h3>⭐ Favoriten</h3>
+  <div class="favorites-container" *ngIf="favorites().length">
+    <h3>⭐ Deine Favoriten</h3>
     <ul>
-      <li *ngFor="let fav of favorites" (click)="fetchWeather(fav)">
-        {{ fav }}
+      <li *ngFor="let fav of favorites()">
+        <a [routerLink]="['/weather-detail', fav]">{{ fav }}</a>
+        <button (click)="removeFavorite(fav)" class="remove-fav">❌</button>
       </li>
     </ul>
   </div>
-
 </div>

@@ -24,6 +24,7 @@ export class WeatherDetailComponent {
     pressure: number;
   } | null>(null);
   errorMessage = signal<string | null>(null);
+  favorites = signal<string[]>(this.loadFavorites());
 
   ngOnInit() {
     // 🔹 Stadt aus der URL auslesen
@@ -36,6 +37,18 @@ export class WeatherDetailComponent {
         this.errorMessage.set('Keine Stadt angegeben!');
       }
     });
+  }
+
+  addToFavorites() {
+    if (!this.city || this.favorites().includes(this.city)) return;
+
+    const updatedFavorites = [...this.favorites(), this.city];
+    this.favorites.set(updatedFavorites);
+    localStorage.setItem('favorites', JSON.stringify(updatedFavorites));
+  }
+
+  private loadFavorites(): string[] {
+    return JSON.parse(localStorage.getItem('favorites') || '[]');
   }
 
   fetchWeather(city: string) {

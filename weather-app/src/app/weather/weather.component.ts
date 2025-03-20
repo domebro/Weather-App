@@ -70,4 +70,6 @@ export class WeatherComponent {
     this.favorites.set(updatedFavorites);
     localStorage.setItem('favorites', JSON.stringify(updatedFavorites));
   }
+
+
 }
